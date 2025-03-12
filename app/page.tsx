@@ -118,7 +118,7 @@ export default function HomePage() {
 
         </div>
 
-        <div className="flex justify-center mt-16">
+        <div className="flex justify-center ">
           <a href="#about" className="animate-bounce">
             <ArrowRight className="h-10 w-10 rotate-90 text-muted-foreground" />
           </a>
@@ -259,7 +259,7 @@ export default function HomePage() {
                 size="lg"
                 className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
               >
-                <Link href={`/projects/project-${project.id}`}>View Project</Link>
+                <Link href={`/projects/Project${project.id}`}>View Project</Link>
               </Button>
             </div>
             <div className="overflow-hidden rounded-lg">

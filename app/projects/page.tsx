@@ -6,62 +6,25 @@ import { Button } from "@/components/ui/button"
 const projects = [
   {
     id: 1,
-    title: "Typography Portfolio",
+    title: "The Essence of Design: SPACE, FORM, FUNCTION",
     description:
-      "A minimalist portfolio website for a typography designer, featuring a clean layout and beautiful typography.",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    image: "/placeholder.svg?height=600&width=800",
-    slug: "typography-portfolio",
-    type: "hosted", // hosted project
+      "This project explores the dynamic relationship between space, form, and function. Through an innovative design approach, we have created an interconnected spatial experience that adapts to natural site conditions, promoting fluid movement and interaction within the built environment.",
+    technologies: ["Architecture", "Modular Design", "Sustainability"],
+    image: "/p1 cover.jpg",
+    slug: "essence-of-design",
+    type: "hosted",
   },
   {
     id: 2,
-    title: "E-commerce Platform",
+    title: "BREATHING NEW LIFE: Daman's Heritage",
     description:
-      "A full-featured e-commerce platform with product management, cart functionality, and payment processing.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    image: "/placeholder.svg?height=600&width=800",
-    slug: "ecommerce-platform",
-    type: "hosted", // hosted project
+      "Reimagining heritage through adaptive reuse, this project transforms a 100-year-old home in Daman into a vibrant art studio and residence. By preserving historical elements while integrating modern functionality, the design honors tradition while fostering creativity.",
+    technologies: ["Heritage Restoration", "Adaptive Reuse", "Community Space"],
+    image: "/p2 cover.png",
+    slug: "daman-heritage-renovation",
+    type: "hosted",
   },
-  {
-    id: 3,
-    title: "Content Management System",
-    description: "A custom CMS built for a publishing company, allowing easy content creation and management.",
-    technologies: ["Next.js", "GraphQL", "PostgreSQL"],
-    image: "/placeholder.svg?height=600&width=800",
-    slug: "content-management-system",
-    type: "hosted", // hosted project
-  },
-  {
-    id: 4,
-    title: "Algorithm Visualizer",
-    description: "A tool for visualizing common algorithms like sorting, pathfinding, and graph traversal algorithms.",
-    technologies: ["JavaScript", "Canvas API", "Data Structures"],
-    githubUrl: "https://github.com/johndoe/algorithm-visualizer",
-    image: "/placeholder.svg?height=600&width=800",
-    type: "github", // GitHub-only project
-  },
-  {
-    id: 5,
-    title: "Compiler Design Project",
-    description: "A simple compiler implementation that demonstrates lexical analysis, parsing, and code generation.",
-    technologies: ["C++", "LLVM", "Automata Theory"],
-    githubUrl: "https://github.com/johndoe/mini-compiler",
-    image: "/placeholder.svg?height=600&width=800",
-    type: "github", // GitHub-only project
-  },
-  {
-    id: 6,
-    title: "Operating System Kernel",
-    description:
-      "A minimal operating system kernel implementing basic process scheduling, memory management, and file systems.",
-    technologies: ["C", "Assembly", "OS Theory"],
-    githubUrl: "https://github.com/johndoe/mini-os",
-    image: "/placeholder.svg?height=600&width=800",
-    type: "github", // GitHub-only project
-  },
-]
+];
 
 export default function ProjectsPage() {
   // Separate hosted and GitHub-only projects
@@ -73,16 +36,13 @@ export default function ProjectsPage() {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h1 className="heading-xl mb-6">Projects</h1>
           <p className="body-lg text-muted-foreground">
-            A showcase of my work, featuring web applications, design projects, and experiments.
+            A showcase of my work, featuring  architecture, design projects, and experiments.
           </p>
         </div>
 
         {/* Hosted Projects */}
         <div className="mb-24">
-          <h2 className="heading-lg mb-10 relative">
-            Web Projects
-            <span className="absolute -z-10 text-[8rem] font-bold text-muted/20 -top-16 -left-6 opacity-80">01</span>
-          </h2>
+
 
           <div className="grid gap-16 md:gap-24">
             {hostedProjects.map((project, index) => (
@@ -111,7 +71,7 @@ export default function ProjectsPage() {
                       size="lg"
                       className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
                     >
-                      <Link href={`/projects/${project.slug}`}>View Project</Link>
+                      <Link href={`/projects/Project${project.id}`}>View Project</Link>
                     </Button>
                   </div>
                   <div className={`overflow-hidden rounded-lg ${index % 2 === 1 ? "md:col-start-1" : ""}`}>
