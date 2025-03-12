@@ -1,101 +1,385 @@
-import Image from "next/image";
+import Link from "next/link"
+import Image from "next/image"
+import { ArrowRight, Calendar, Github, Linkedin, Mail, Twitter, Users } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import Timeline from "@/components/Timeline"
 
-export default function Home() {
+// Mock workshops data
+const workshops = [
+  {
+    id: 1,
+    title: "Advanced React Patterns",
+    description: "Learn advanced React patterns and techniques to build scalable applications.",
+    date: "April 15, 2025",
+    time: "10:00 AM - 2:00 PM",
+    location: "Online",
+    image: "/placeholder.svg?height=300&width=500",
+    status: "Upcoming",
+    slug: "advanced-react-patterns",
+  },
+  {
+    id: 2,
+    title: "TypeScript for JavaScript Developers",
+    description: "A comprehensive introduction to TypeScript for experienced JavaScript developers.",
+    date: "May 10, 2025",
+    time: "9:00 AM - 12:00 PM",
+    location: "Tech Hub, San Francisco",
+    image: "/placeholder.svg?height=300&width=500",
+    status: "Upcoming",
+    slug: "typescript-for-javascript-developers",
+  },
+  {
+    id: 3,
+    title: "Building with Next.js",
+    description: "Explore the features of Next.js and learn how to build performant web applications.",
+    date: "March 5, 2025",
+    time: "1:00 PM - 5:00 PM",
+    location: "Online",
+    image: "/placeholder.svg?height=300&width=500",
+    status: "Past",
+    slug: "building-with-nextjs",
+  },
+]
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+    <div className="pt-20">
+      {/* Hero Section */}
+      <section className="container-custom section-spacing flex flex-col justify-center min-h-[90vh]">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8">
+            <div>
+              <p className="text-muted-foreground text-lg mb-2 font-medium">Hello, I&apos;m</p>
+              <h1 className="heading-xl mb-4">Lohitha Mendu</h1>
+              <h2 className="heading-md text-muted-foreground">Design Architect</h2>
+            </div>
+            <p className="body-lg text-muted-foreground max-w-md">
+            I design innovative, sustainable structures with a focus on functionality, aesthetics, and user experience.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button asChild size="lg" className="text-lg px-8">
+                <Link href="/#contact">Contact Me</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="text-lg px-8">
+                <Link href="/projects">View Projects</Link>
+              </Button>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-muted rounded-full opacity-50"></div>
+            <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-muted rounded-full opacity-50"></div>
+            <div className="relative z-10 aspect-square bg-muted rounded-2xl overflow-hidden border border-border">
+              <Image
+                src="/placeholder.svg?height=600&width=600"
+                alt="John Doe"
+                width={600}
+                height={600}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center mt-16">
+          <a href="#about" className="animate-bounce">
+            <ArrowRight className="h-10 w-10 rotate-90 text-muted-foreground" />
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="container-custom section-spacing">
+        <div className="grid md:grid-cols-3 gap-12">
+          <div>
+            <h2 className="heading-lg mb-6 relative">
+              About
+              <span className="absolute -z-10 text-[10rem] font-bold text-muted/20 -top-20 -left-6 opacity-80">01</span>
+            </h2>
+          </div>
+          <div className="md:col-span-2">
+            <p className="body-lg mb-6">
+              I'm a passionate developer with over 5 years of experience building web applications. I specialize in
+              React, Next.js, and Node.js, creating responsive and accessible websites.
+            </p>
+            <p className="body-lg mb-6">
+              When I'm not coding, you can find me hiking, reading, or experimenting with new technologies. I believe in
+              clean, minimal design that puts the focus on content and user experience.
+            </p>
+            <p className="body-lg mb-10">
+              I also regularly conduct{" "}
+              <Link href="/workshops" className="font-medium underline underline-offset-4">
+                workshops and training sessions
+              </Link>{" "}
+              for developers looking to level up their skills in modern web technologies.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button asChild variant="outline" size="lg">
+                <Link href="/blog">Read My Blog</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/workshops">View Workshops</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Timeline/>
+      <section className="container-custom section-spacing">
+        <div className="grid md:grid-cols-3 gap-12">
+          <div>
+            <h2 className="heading-lg mb-6 relative">
+              Skills
+              <span className="absolute -z-10 text-[10rem] font-bold text-muted/20 -top-20 -left-6 opacity-80">04</span>
+            </h2>
+          </div>
+          <div className="md:col-span-2">
+            <div className="grid grid-cols-2 gap-y-8 gap-x-16">
+              {["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "GraphQL", "MongoDB", "AWS"].map(
+                (skill, index) => (
+                  <div key={skill} className="border-b border-border pb-2 group">
+                    <div className="flex items-baseline">
+                      <span className="text-sm text-muted-foreground mr-4 group-hover:text-foreground transition-colors">
+                        {(index + 1).toString().padStart(2, "0")}
+                      </span>
+                      <span className="text-2xl group-hover:translate-x-2 transition-transform">{skill}</span>
+                    </div>
+                  </div>
+                ),
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects Section */}
+      <section className="container-custom section-spacing">
+        <div className="flex flex-col md:flex-row justify-between items-baseline mb-16">
+          <h2 className="heading-lg relative">
+            Featured Projects
+            <span className="absolute -z-10 text-[10rem] font-bold text-muted/20 -top-20 -left-6 opacity-80">02</span>
+          </h2>
+          <Link href="/projects" className="link-underline text-lg text-muted-foreground mt-4 md:mt-0">
+            View All Projects
+          </Link>
+        </div>
+
+        <div className="grid gap-24">
+          {[1, 2, 3].map((project) => (
+            <div key={project} className="group">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                  <span className="text-8xl font-bold text-muted/30 group-hover:text-muted/50 transition-colors">
+                    0{project}
+                  </span>
+                  <h3 className="text-4xl font-bold mb-6 -mt-8 group-hover:translate-x-2 transition-transform">
+                    Project {project}
+                  </h3>
+                  <p className="text-xl text-muted-foreground mb-8">
+                    A detailed description of this project, including the problem it solves, the technologies used, and
+                    the challenges overcome during development.
+                  </p>
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                  >
+                    <Link href={`/projects/project-${project}`}>View Project</Link>
+                  </Button>
+                </div>
+                <div className="overflow-hidden rounded-lg">
+                  <div className="aspect-video bg-muted rounded-lg overflow-hidden transition-transform group-hover:scale-105 duration-500">
+                    <Image
+                      src={`/placeholder.svg?height=270&width=480`}
+                      alt={`Project ${project}`}
+                      width={480}
+                      height={270}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Workshops Section */}
+      <section className="container-custom section-spacing">
+        <div className="flex flex-col md:flex-row justify-between items-baseline mb-16">
+          <h2 className="heading-lg relative">
+            Workshops
+            <span className="absolute -z-10 text-[10rem] font-bold text-muted/20 -top-20 -left-6 opacity-80">03</span>
+          </h2>
+          <Link href="/workshops" className="link-underline text-lg text-muted-foreground mt-4 md:mt-0">
+            View All Workshops
+          </Link>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {workshops.map((workshop) => (
+            <Card key={workshop.id} className="group overflow-hidden border border-border bg-card">
+              <div className="aspect-video overflow-hidden">
+                <Image
+                  src={workshop.image || "/placeholder.svg"}
+                  alt={workshop.title}
+                  width={500}
+                  height={300}
+                  className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                />
+              </div>
+              <CardHeader className="p-6">
+                <div className="flex justify-between items-start mb-2">
+                  <Badge variant={workshop.status === "Upcoming" ? "default" : "secondary"}>{workshop.status}</Badge>
+                </div>
+                <CardTitle className="text-2xl group-hover:text-primary transition-colors">{workshop.title}</CardTitle>
+                <CardDescription className="line-clamp-2">{workshop.description}</CardDescription>
+              </CardHeader>
+              <CardContent className="p-6 pt-0 space-y-2">
+                <div className="flex items-center text-sm text-muted-foreground">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  <span>{workshop.date}</span>
+                </div>
+                <div className="flex items-center text-sm text-muted-foreground">
+                  <Users className="h-4 w-4 mr-2" />
+                  <span>{workshop.location}</span>
+                </div>
+              </CardContent>
+              <CardFooter className="p-6 pt-0">
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                >
+                  <Link href={`/workshops/${workshop.slug}`}>Learn More</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Skills Section */}
+     
+
+      {/* Recent Blog Posts */}
+      <section className="container-custom section-spacing">
+        <div className="flex flex-col md:flex-row justify-between items-baseline mb-16">
+          <h2 className="heading-lg relative">
+           My Creativity
+            <span className="absolute -z-10 text-[10rem] font-bold text-muted/20 -top-20 -left-6 opacity-80">05</span>
+          </h2>
+          <Link href="/blog" className="link-underline text-lg text-muted-foreground mt-4 md:mt-0">
+            View All Articles
+          </Link>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[1, 2, 3].map((post) => (
+            <Link
+              key={post}
+              href={`/blog/post-${post}`}
+              className="group block bg-card rounded-lg overflow-hidden border border-border hover:shadow-lg transition-shadow"
+            >
+              <div className="aspect-video bg-muted overflow-hidden">
+                <Image
+                  src={`/placeholder.svg?height=200&width=400`}
+                  alt={`Blog Post ${post}`}
+                  width={400}
+                  height={200}
+                  className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <div className="text-sm text-muted-foreground mb-2">March {post}, 2025</div>
+                <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
+                  Typography in Web Design: Best Practices
+                </h3>
+                <p className="text-muted-foreground">
+                  Learn how to use typography effectively to create beautiful and readable web experiences.
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="container-custom section-spacing">
+        <h2 className="heading-lg mb-16 relative text-center">
+          Get In Touch
+          <span className="absolute -z-10 text-[10rem] font-bold text-muted/20 -top-20 left-1/2 -translate-x-1/2 opacity-80">
+            06
+          </span>
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-16">
+          <div>
+            <p className="text-2xl leading-relaxed mb-10">
+              I'm always open to new opportunities and collaborations. Feel free to reach out!
+            </p>
+            <div className="flex flex-col gap-6">
+              <a href="#" className="flex items-center gap-4 text-xl text-muted-foreground hover:text-foreground group">
+                <Mail className="h-6 w-6 group-hover:scale-110 transition-transform" />
+                <span className="link-underline">john.doe@example.com</span>
+              </a>
+              <a href="#" className="flex items-center gap-4 text-xl text-muted-foreground hover:text-foreground group">
+                <Linkedin className="h-6 w-6 group-hover:scale-110 transition-transform" />
+                <span className="link-underline">linkedin.com/in/johndoe</span>
+              </a>
+              <a href="#" className="flex items-center gap-4 text-xl text-muted-foreground hover:text-foreground group">
+                <Github className="h-6 w-6 group-hover:scale-110 transition-transform" />
+                <span className="link-underline">github.com/johndoe</span>
+              </a>
+              <a href="#" className="flex items-center gap-4 text-xl text-muted-foreground hover:text-foreground group">
+                <Twitter className="h-6 w-6 group-hover:scale-110 transition-transform" />
+                <span className="link-underline">twitter.com/johndoe</span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <form className="flex flex-col gap-8">
+              <div>
+                <label htmlFor="name" className="block text-lg mb-2 font-medium">
+                  Name
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  className="w-full border-b-2 border-input py-3 text-xl bg-transparent focus:outline-none focus:border-primary transition-colors"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-lg mb-2 font-medium">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  className="w-full border-b-2 border-input py-3 text-xl bg-transparent focus:outline-none focus:border-primary transition-colors"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-lg mb-2 font-medium">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  rows={4}
+                  className="w-full border-b-2 border-input py-3 text-xl bg-transparent focus:outline-none focus:border-primary transition-colors"
+                ></textarea>
+              </div>
+              <div>
+                <Button size="lg" className="text-lg px-8 w-full md:w-auto">
+                  Send Message
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
+
