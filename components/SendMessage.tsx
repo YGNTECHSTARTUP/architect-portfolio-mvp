@@ -26,7 +26,7 @@ const SendMessage = () => {
         window.location.href = mailtoLink;
       };
   return (
-    <section id="contact" className="container-custom section-spacing">
+    <section id="contact" className="container-custom section-spacing -mt-20">
     <h2 className="heading-lg mb-16 relative text-center">
       Get In Touch
       <span className="absolute -z-10 text-[10rem] font-bold text-muted/20 -top-20 left-1/2 -translate-x-1/2 opacity-80">

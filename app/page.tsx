@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
 // import { ArrowRight, Calendar, Users } from "lucide-react"
-import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 // import { Badge } from "@/components/ui/badge"
 // import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -118,16 +117,16 @@ export default function HomePage() {
 
         </div>
 
-        <div className="flex justify-center ">
+        {/* <div className="flex justify-center ">
           <a href="#about" className="animate-bounce">
             <ArrowRight className="h-10 w-10 rotate-90 text-muted-foreground" />
           </a>
-        </div>
+        </div> */}
 
       </section>
 
       {/* About Section */}
-      <section id="about" className="container-custom section-spacing">
+      <section id="about" className="container-custom section-spacing -mt-20">
   <div className="grid md:grid-cols-3 gap-12">
     <div>
       <h2 className="heading-lg mb-6 relative">
@@ -148,21 +147,21 @@ export default function HomePage() {
         I am deeply passionate about environmental sustainability and believe that architecture has a critical role to play in 
         creating a more sustainable future.
       </p>
-      <div className="flex flex-wrap gap-4">
+      {/* <div className="flex flex-wrap gap-4">
         <Button asChild variant="outline" size="lg">
           <Link href="/portfolio">View My Work</Link>
         </Button>
         <Button asChild variant="outline" size="lg">
           <Link href="/workshops">Explore Workshops</Link>
         </Button>
-      </div>
+      </div> */}
     </div>
   </div>
 </section>
 
 
       <Timeline/>
-      <section className="container-custom section-spacing">
+      <section className="container-custom section-spacing -mt-20">
         <div className="grid md:grid-cols-3 gap-12">
           <div>
             <h2 className="heading-lg mb-6 relative">
@@ -191,7 +190,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Projects Section */}
-      <section className="container-custom section-spacing">
+      <section className="container-custom section-spacing -mt-20">
         <div className="flex flex-col md:flex-row justify-between items-baseline mb-16">
           <h2 className="heading-lg relative">
             Featured Projects
