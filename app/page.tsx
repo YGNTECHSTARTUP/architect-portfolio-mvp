@@ -5,8 +5,20 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import Timeline from "@/components/Timeline"
+import { VerseOnMind } from "@/components/VerseOnMind"
 
 // Mock workshops data
+const skills = [
+  "Sketching",       // Manual Skill
+  "SketchUp",        // Technical Skill
+  "Drafting",        // Manual Skill
+  "AutoCAD",         // Technical Skill
+  "Model Making",    // Manual Skill
+  "D5 Render",       // Technical Skill
+  "Photoshop",       // Technical Skill
+  "InDesign"         // Technical Skill
+];
+
 const workshops = [
   {
     id: 1,
@@ -72,58 +84,63 @@ export default function HomePage() {
             <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-muted rounded-full opacity-50"></div>
             <div className="relative z-10 aspect-square bg-muted rounded-2xl overflow-hidden border border-border">
               <Image
-                src="/placeholder.svg?height=600&width=600"
+                src="/pic.png"
                 alt="John Doe"
-                width={600}
-                height={600}
+                width={1200}
+                height={1200}
                 className="w-full h-full object-cover"
               />
             </div>
           </div>
         </div>
+        <div className="mt-4">
+        <VerseOnMind/>
+
+        </div>
+
         <div className="flex justify-center mt-16">
           <a href="#about" className="animate-bounce">
             <ArrowRight className="h-10 w-10 rotate-90 text-muted-foreground" />
           </a>
         </div>
+
       </section>
 
       {/* About Section */}
       <section id="about" className="container-custom section-spacing">
-        <div className="grid md:grid-cols-3 gap-12">
-          <div>
-            <h2 className="heading-lg mb-6 relative">
-              About
-              <span className="absolute -z-10 text-[10rem] font-bold text-muted/20 -top-20 -left-6 opacity-80">01</span>
-            </h2>
-          </div>
-          <div className="md:col-span-2">
-            <p className="body-lg mb-6">
-              I'm a passionate developer with over 5 years of experience building web applications. I specialize in
-              React, Next.js, and Node.js, creating responsive and accessible websites.
-            </p>
-            <p className="body-lg mb-6">
-              When I'm not coding, you can find me hiking, reading, or experimenting with new technologies. I believe in
-              clean, minimal design that puts the focus on content and user experience.
-            </p>
-            <p className="body-lg mb-10">
-              I also regularly conduct{" "}
-              <Link href="/workshops" className="font-medium underline underline-offset-4">
-                workshops and training sessions
-              </Link>{" "}
-              for developers looking to level up their skills in modern web technologies.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button asChild variant="outline" size="lg">
-                <Link href="/blog">Read My Blog</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="/workshops">View Workshops</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div className="grid md:grid-cols-3 gap-12">
+    <div>
+      <h2 className="heading-lg mb-6 relative">
+        About
+        <span className="absolute -z-10 text-[10rem] font-bold text-muted/20 -top-20 -left-6 opacity-80">01</span>
+      </h2>
+    </div>
+    <div className="md:col-span-2">
+      <p className="body-lg mb-6">
+        I&apos;m Lohitha Mendu, an architecture student with a strong passion for sustainable design. My focus is on creating 
+        environmentally responsible spaces using natural materials and minimalist principles.
+      </p>
+      <p className="body-lg mb-6">
+        I believe in continuous learning and actively seek opportunities to expand my knowledge, including participation in 
+        workshops on sustainable architecture. I am dedicated to exploring and experimenting with materials to find innovative solutions.
+      </p>
+      <p className="body-lg mb-10">
+        I am deeply passionate about environmental sustainability and believe that architecture has a critical role to play in 
+        creating a more sustainable future.
+      </p>
+      <div className="flex flex-wrap gap-4">
+        <Button asChild variant="outline" size="lg">
+          <Link href="/portfolio">View My Work</Link>
+        </Button>
+        <Button asChild variant="outline" size="lg">
+          <Link href="/workshops">Explore Workshops</Link>
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       <Timeline/>
       <section className="container-custom section-spacing">
         <div className="grid md:grid-cols-3 gap-12">
@@ -134,8 +151,9 @@ export default function HomePage() {
             </h2>
           </div>
           <div className="md:col-span-2">
+
             <div className="grid grid-cols-2 gap-y-8 gap-x-16">
-              {["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "GraphQL", "MongoDB", "AWS"].map(
+              {skills.map(
                 (skill, index) => (
                   <div key={skill} className="border-b border-border pb-2 group">
                     <div className="flex items-baseline">
@@ -317,7 +335,7 @@ export default function HomePage() {
         <div className="grid md:grid-cols-2 gap-16">
           <div>
             <p className="text-2xl leading-relaxed mb-10">
-              I'm always open to new opportunities and collaborations. Feel free to reach out!
+              I&apos;m always open to new opportunities and collaborations. Feel free to reach out!
             </p>
             <div className="flex flex-col gap-6">
               <a href="#" className="flex items-center gap-4 text-xl text-muted-foreground hover:text-foreground group">

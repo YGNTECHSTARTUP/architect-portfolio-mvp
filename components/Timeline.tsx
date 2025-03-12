@@ -3,51 +3,33 @@
 import { useState, useRef } from "react"
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion"
 
-
 const timelineEvents = [
   {
-    year: 2010,
-    title: "Visionary Architecture Founded",
-    description: "Our journey began with a commitment to sustainable, human-centered design.",
-    details:
-      "Founded by award-winning architects Maria Chen and David Rodriguez, Visionary Architecture started as a small studio dedicated to creating spaces that harmonize with nature and enhance human wellbeing.",
-  },
-  {
-    year: 2012,
-    title: "First Major Commission",
-    description: "Designed an award-winning public library that became a community centerpiece.",
-    details:
-      "Our Riverside Library project won the National Design Excellence Award and established our reputation for creating beautiful, functional public spaces that bring communities together.",
-  },
-  {
-    year: 2015,
-    title: "Expansion into Sustainable Housing",
-    description: "Launched our eco-housing division to address the growing need for sustainable living solutions.",
-    details:
-      "Our GreenHome project set new standards for energy-efficient residential design, achieving LEED Platinum certification and demonstrating that sustainable living can be both beautiful and affordable.",
-  },
-  {
-    year: 2017,
-    title: "International Recognition",
-    description: "Our innovative approach to urban revitalization gained global attention.",
-    details:
-      "The Harbor District Transformation project won the International Urban Design Award, recognizing our ability to breathe new life into neglected urban spaces while honoring their historical significance.",
+    year: 2005,
+    title: "Born",
+    description: "The beginning of my journey.",
+    details: "Born in 2005, marking the start of my path towards architecture and sustainability.",
   },
   {
     year: 2020,
-    title: "Launch of Research Division",
-    description: "Established a dedicated team to explore cutting-edge materials and construction techniques.",
-    details:
-      "Our research into biophilic design and advanced sustainable materials has led to partnerships with leading universities and a series of publications advancing the field of sustainable architecture.",
+    title: "SSC - Nirmala High School",
+    description: "Completed secondary education.",
+    details: "Graduated from Nirmala High School, Vijayawada, Andhra Pradesh, laying a strong foundation for future studies.",
   },
   {
-    year: 2023,
-    title: "Carbon-Neutral Commitment",
-    description: "Pledged that all our designs will be carbon-neutral by 2030.",
-    details:
-      "We've implemented a comprehensive sustainability framework for all our projects, measuring and minimizing environmental impact while maximizing social benefit and wellbeing.",
+    year: 2022,
+    title: "10+2 - Sri Srinivasa Gravity College",
+    description: "Completed higher secondary education.",
+    details: "Studied at Sri Srinivasa Gravity College, Vijayawada, focusing on subjects that paved the way for architecture studies.",
+  },
+  {
+    year: 2022,
+    title: "B.Arch - Parul University",
+    description: "Pursuing a Bachelor's in Architecture.",
+    details: "Joined Parul University, Vadodara, Gujarat, to explore my passion for sustainable design and innovative architecture.",
   },
 ]
+
 
 const FlowerIcon = ({ progress }: { progress: number }) => (
   <svg

@@ -258,7 +258,7 @@ export default function WorkshopsPage() {
             {workshops.flatMap((workshop) =>
               workshop.testimonials.map((testimonial, index) => (
                 <div key={`${workshop.id}-${index}`} className="bg-muted/30 p-8 rounded-lg border border-border">
-                  <p className="text-xl italic mb-6">"{testimonial.quote}"</p>
+                  <p className="text-xl italic mb-6">&quot;{testimonial.quote}&quot;</p>
                   <div className="flex items-center">
                     <div className="w-12 h-12 rounded-full bg-muted overflow-hidden mr-4">
                       <Image

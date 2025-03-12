@@ -141,7 +141,7 @@ export default function ProjectsPage() {
           </h2>
 
           <p className="text-xl text-muted-foreground mb-10 max-w-3xl">
-            These projects focus on computer science fundamentals and systems programming. They're available on GitHub
+            These projects focus on computer science fundamentals and systems programming. They&apos;re available on GitHub
             for code review and educational purposes.
           </p>
 
