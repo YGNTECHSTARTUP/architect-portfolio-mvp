@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { Mail, PhoneCall } from "lucide-react"
 
 export function Footer() {
   return (
@@ -8,10 +8,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
             <Link href="/" className="font-playfair text-3xl font-bold tracking-tight">
-              John<span className="text-muted-foreground">Doe</span>
+              Mendu<span className="text-muted-foreground">Lohitha</span>
             </Link>
             <p className="mt-4 text-muted-foreground">
-              Full Stack Developer specializing in creating beautiful, functional websites and applications.
+            I design innovative, sustainable structures with a focus on functionality, aesthetics, and user experience.
             </p>
           </div>
 
@@ -28,16 +28,8 @@ export function Footer() {
                   Projects
                 </Link>
               </li>
-              <li>
-                <Link href="/workshops" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Workshops
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Blog
-                </Link>
-              </li>
+            
+            
               <li>
                 <Link href="/#contact" className="text-muted-foreground hover:text-foreground transition-colors">
                   Contact
@@ -49,28 +41,21 @@ export function Footer() {
           <div>
             <h3 className="text-xl font-medium mb-4">Connect</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Mail className="h-6 w-6" />
                 <span className="sr-only">Email</span>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Linkedin className="h-6 w-6" />
+              </Link>
+              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <PhoneCall className="h-6 w-6" />
                 <span className="sr-only">LinkedIn</span>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Github className="h-6 w-6" />
-                <span className="sr-only">GitHub</span>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Twitter className="h-6 w-6" />
-                <span className="sr-only">Twitter</span>
-              </a>
+              </Link>
+      
             </div>
           </div>
         </div>
 
         <div className="mt-12 pt-6 border-t border-border text-center text-muted-foreground">
-          <p>© {new Date().getFullYear()} John Doe. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Mendu Lohitha. All rights reserved.</p>
         </div>
       </div>
     </footer>

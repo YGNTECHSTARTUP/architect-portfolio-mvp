@@ -1,11 +1,29 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Calendar, Github, Linkedin, Mail, Twitter, Users } from "lucide-react"
+// import { ArrowRight, Calendar, Users } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+// import { Badge } from "@/components/ui/badge"
+// import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import Timeline from "@/components/Timeline"
 import { VerseOnMind } from "@/components/VerseOnMind"
+import SendMessage from "@/components/SendMessage"
+const projects = [
+  {
+    id:1,
+    title:"The Essence of Design SPACE, FORM, FUNCTION",
+    imgurl:"p1 cover.jpg",
+    description:"This project explores the dynamic relationship between space, form, and function. Through an innovative design approach, we have created an interconnected spatial experience that adapts to natural site conditions, promoting fluid movement and interaction within the built environment."
+  },
+  {
+    id: 2,
+    title: "BREATHING NEW LIFE Daman's Heritage",
+    imgurl:"p2 cover.png",
+    description:
+      "Reimagining heritage through adaptive reuse, this project transforms a 100-year-old home in Daman into a vibrant art studio and residence. By preserving historical elements while integrating modern functionality, the design honors tradition while fostering creativity.",
+  },
+];
+
 
 // Mock workshops data
 const skills = [
@@ -19,44 +37,46 @@ const skills = [
   "InDesign"         // Technical Skill
 ];
 
-const workshops = [
-  {
-    id: 1,
-    title: "Advanced React Patterns",
-    description: "Learn advanced React patterns and techniques to build scalable applications.",
-    date: "April 15, 2025",
-    time: "10:00 AM - 2:00 PM",
-    location: "Online",
-    image: "/placeholder.svg?height=300&width=500",
-    status: "Upcoming",
-    slug: "advanced-react-patterns",
-  },
-  {
-    id: 2,
-    title: "TypeScript for JavaScript Developers",
-    description: "A comprehensive introduction to TypeScript for experienced JavaScript developers.",
-    date: "May 10, 2025",
-    time: "9:00 AM - 12:00 PM",
-    location: "Tech Hub, San Francisco",
-    image: "/placeholder.svg?height=300&width=500",
-    status: "Upcoming",
-    slug: "typescript-for-javascript-developers",
-  },
-  {
-    id: 3,
-    title: "Building with Next.js",
-    description: "Explore the features of Next.js and learn how to build performant web applications.",
-    date: "March 5, 2025",
-    time: "1:00 PM - 5:00 PM",
-    location: "Online",
-    image: "/placeholder.svg?height=300&width=500",
-    status: "Past",
-    slug: "building-with-nextjs",
-  },
-]
+// const workshops = [
+//   {
+//     id: 1,
+//     title: "Advanced React Patterns",
+//     description: "Learn advanced React patterns and techniques to build scalable applications.",
+//     date: "April 15, 2025",
+//     time: "10:00 AM - 2:00 PM",
+//     location: "Online",
+//     image: "/placeholder.svg?height=300&width=500",
+//     status: "Upcoming",
+//     slug: "advanced-react-patterns",
+//   },
+//   {
+//     id: 2,
+//     title: "TypeScript for JavaScript Developers",
+//     description: "A comprehensive introduction to TypeScript for experienced JavaScript developers.",
+//     date: "May 10, 2025",
+//     time: "9:00 AM - 12:00 PM",
+//     location: "Tech Hub, San Francisco",
+//     image: "/placeholder.svg?height=300&width=500",
+//     status: "Upcoming",
+//     slug: "typescript-for-javascript-developers",
+//   },
+//   {
+//     id: 3,
+//     title: "Building with Next.js",
+//     description: "Explore the features of Next.js and learn how to build performant web applications.",
+//     date: "March 5, 2025",
+//     time: "1:00 PM - 5:00 PM",
+//     location: "Online",
+//     image: "/placeholder.svg?height=300&width=500",
+//     status: "Past",
+//     slug: "building-with-nextjs",
+//   },
+// ]
 
 export default function HomePage() {
+
   return (
+    
     <div className="pt-20">
       {/* Hero Section */}
       <section className="container-custom section-spacing flex flex-col justify-center min-h-[90vh]">
@@ -182,7 +202,7 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div className="grid gap-24">
+        {/* <div className="grid gap-24">
           {[1, 2, 3].map((project) => (
             <div key={project} className="group">
               <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -220,11 +240,48 @@ export default function HomePage() {
               </div>
             </div>
           ))}
+        </div> */}
+          <div className="grid gap-24">
+      {projects.map((project) => (
+        <div key={project.id} className="group">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-8xl font-bold text-muted/30 group-hover:text-muted/50 transition-colors">
+                0{project.id}
+              </span>
+              <h3 className="text-4xl font-bold mb-6 -mt-8 group-hover:translate-x-2 transition-transform">
+                {project.title}
+              </h3>
+              <p className="text-xl text-muted-foreground mb-8">{project.description}</p>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+              >
+                <Link href={`/projects/project-${project.id}`}>View Project</Link>
+              </Button>
+            </div>
+            <div className="overflow-hidden rounded-lg">
+              <div className="aspect-video bg-muted rounded-lg overflow-hidden transition-transform group-hover:scale-105 duration-500">
+                <Image
+                  src={`/${project.imgurl}`}
+                  alt={project.title}
+                  width={480}
+                  height={270}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      ))}
+    </div>
+  
       </section>
 
       {/* Workshops Section */}
-      <section className="container-custom section-spacing">
+      {/* <section className="container-custom section-spacing">
         <div className="flex flex-col md:flex-row justify-between items-baseline mb-16">
           <h2 className="heading-lg relative">
             Workshops
@@ -276,13 +333,15 @@ export default function HomePage() {
             </Card>
           ))}
         </div>
-      </section>
+      </section> */}
+       
+  
 
       {/* Skills Section */}
      
 
       {/* Recent Blog Posts */}
-      <section className="container-custom section-spacing">
+      {/* <section className="container-custom section-spacing">
         <div className="flex flex-col md:flex-row justify-between items-baseline mb-16">
           <h2 className="heading-lg relative">
            My Creativity
@@ -321,82 +380,11 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
-      <section id="contact" className="container-custom section-spacing">
-        <h2 className="heading-lg mb-16 relative text-center">
-          Get In Touch
-          <span className="absolute -z-10 text-[10rem] font-bold text-muted/20 -top-20 left-1/2 -translate-x-1/2 opacity-80">
-            06
-          </span>
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-16">
-          <div>
-            <p className="text-2xl leading-relaxed mb-10">
-              I&apos;m always open to new opportunities and collaborations. Feel free to reach out!
-            </p>
-            <div className="flex flex-col gap-6">
-              <a href="#" className="flex items-center gap-4 text-xl text-muted-foreground hover:text-foreground group">
-                <Mail className="h-6 w-6 group-hover:scale-110 transition-transform" />
-                <span className="link-underline">john.doe@example.com</span>
-              </a>
-              <a href="#" className="flex items-center gap-4 text-xl text-muted-foreground hover:text-foreground group">
-                <Linkedin className="h-6 w-6 group-hover:scale-110 transition-transform" />
-                <span className="link-underline">linkedin.com/in/johndoe</span>
-              </a>
-              <a href="#" className="flex items-center gap-4 text-xl text-muted-foreground hover:text-foreground group">
-                <Github className="h-6 w-6 group-hover:scale-110 transition-transform" />
-                <span className="link-underline">github.com/johndoe</span>
-              </a>
-              <a href="#" className="flex items-center gap-4 text-xl text-muted-foreground hover:text-foreground group">
-                <Twitter className="h-6 w-6 group-hover:scale-110 transition-transform" />
-                <span className="link-underline">twitter.com/johndoe</span>
-              </a>
-            </div>
-          </div>
-          <div>
-            <form className="flex flex-col gap-8">
-              <div>
-                <label htmlFor="name" className="block text-lg mb-2 font-medium">
-                  Name
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  className="w-full border-b-2 border-input py-3 text-xl bg-transparent focus:outline-none focus:border-primary transition-colors"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-lg mb-2 font-medium">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  className="w-full border-b-2 border-input py-3 text-xl bg-transparent focus:outline-none focus:border-primary transition-colors"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-lg mb-2 font-medium">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="w-full border-b-2 border-input py-3 text-xl bg-transparent focus:outline-none focus:border-primary transition-colors"
-                ></textarea>
-              </div>
-              <div>
-                <Button size="lg" className="text-lg px-8 w-full md:w-auto">
-                  Send Message
-                </Button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
+      <SendMessage/>
+  
     </div>
   )
 }

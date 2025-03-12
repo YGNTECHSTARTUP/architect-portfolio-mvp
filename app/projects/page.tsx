@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Github } from "lucide-react"
 
 // Mock projects data
 const projects = [
@@ -67,7 +66,6 @@ const projects = [
 export default function ProjectsPage() {
   // Separate hosted and GitHub-only projects
   const hostedProjects = projects.filter((project) => project.type === "hosted")
-  const githubProjects = projects.filter((project) => project.type === "github")
 
   return (
     <div className="pt-20">
@@ -134,7 +132,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* GitHub-only Projects */}
-        <div>
+        {/* <div>
           <h2 className="heading-lg mb-10 relative">
             Deep CS Projects
             <span className="absolute -z-10 text-[8rem] font-bold text-muted/20 -top-16 -left-6 opacity-80">02</span>
@@ -186,7 +184,7 @@ export default function ProjectsPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </section>
     </div>
   )

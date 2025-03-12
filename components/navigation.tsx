@@ -2,21 +2,21 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import {  Moon, Sun } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { ThemeToggle } from "./theme-toggle"
+// import { ThemeToggle } from "./theme-toggle"
+import { useTheme } from "next-themes"
 
 export function Navigation() {
+  const { theme, setTheme } = useTheme()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
 
   const routes = [
     { name: "Home", path: "/" },
     { name: "Projects", path: "/projects" },
-    { name: "Workshops", path: "/workshops" },
-    { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/#contact" },
   ]
 
@@ -24,7 +24,7 @@ export function Navigation() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="container-custom flex items-center justify-between h-20">
         <Link href="/" className="font-playfair text-2xl font-bold tracking-tight">
-          John<span className="text-muted-foreground">Doe</span>
+          Mendu<span className="text-muted-foreground">Lohitha</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -41,15 +41,32 @@ export function Navigation() {
               {route.name}
             </Link>
           ))}
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
+          <div className="mt-auto">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="w-full p-2"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        >
+          {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+        </Button>
+      </div>
         </nav>
 
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle />
-          <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
+        <div className="mt-auto">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="w-full p-2"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        >
+          {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+        </Button>
+      </div>
+      
         </div>
       </div>
 
