@@ -24,6 +24,16 @@ const projects = [
     slug: "daman-heritage-renovation",
     type: "hosted",
   },
+  {
+    id: 3,
+    title: "SEA BREEZE ACADEMY: Learning by the Sea",
+    description:
+      "This project establishes a contemporary educational institution in Porbandar, Gujarat, inspired by the rhythmic patterns of the Arabian Sea. Fluid architectural forms, layered spatial organization, and strategic integration of natural light and ventilation create a sustainable, inclusive, and vibrant learning environment for 480 students.",
+    technologies: ["Sustainable Design", "Wave-Inspired Architecture", "Educational Infrastructure"],
+    image: "/p3 cover.jpg",
+    slug: "sea-breeze-academy",
+    type: "hosted",
+  },
 ];
 
 export default function ProjectsPage() {
