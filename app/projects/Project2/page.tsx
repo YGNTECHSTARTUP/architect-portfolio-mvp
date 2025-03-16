@@ -20,8 +20,8 @@ export default function ProjectShowcaseExample() {
   ]}
   images={[
     "/p4.png",
-    "/p3.png",
-    "/p2.png"
+    "/p2.png",
+    "/p3.png"
   ]}
 />
 

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-
+import Video from "next-video"
 interface ProjectShowcaseProps {
   coverImage: string
   title: string
@@ -11,7 +11,7 @@ interface ProjectShowcaseProps {
   className?: string
 }
 
-export default function ProjectShowcase({
+export default function ProjectShowcaseee({
   coverImage,
   title,
   mainDescription,
@@ -57,11 +57,15 @@ export default function ProjectShowcase({
         </div>
       </div>
 
-      <div id="vid">
-      
-    
-
-      </div>
+      <div id="vid" className="mx-auto flex justify-center items-center min-h-screen px-4">
+  <div className="w-full max-w-[400px] aspect-[9/16]">
+    <Video
+      src="/pro3.mp4"
+      className="w-full h-full object-cover rounded-xl shadow-lg"
+      controls
+    />
+  </div>
+</div>
 
       {/* Image Grid */}
       <div className="mb-16">

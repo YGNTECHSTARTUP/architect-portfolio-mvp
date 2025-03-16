@@ -96,8 +96,7 @@ export default function HomePage() {
               <h2 className="heading-md text-muted-foreground">Design Architect</h2>
             </div>
             <p className="body-lg text-muted-foreground max-w-md">
-            I design innovative, sustainable structures with a focus on functionality, aesthetics, and user experience.
-            </p>
+            Passionated about sustainable architecture </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="text-lg px-8">
                 <Link href="/#contact">Contact Me</Link>

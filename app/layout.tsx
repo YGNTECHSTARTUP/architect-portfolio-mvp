@@ -16,8 +16,8 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "John Doe | Full Stack Developer",
-  description: "Portfolio of John Doe, a Full Stack Developer specializing in React, Next.js, and Node.js",
+  title: "Lohitha Mendu | Sustainable Architect",
+  description: "Portfolio of Lohitha Mendu, a Sustainable Architect",
 }
 
 export default function RootLayout({

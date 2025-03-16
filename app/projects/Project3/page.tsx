@@ -1,8 +1,7 @@
-import ProjectShowcase from "@/components/ProjectShowcase"
-
+import ProjectShowcaseee from "@/components/ui/ProjectShowCaseee"
 export default function ProjectShowcaseExample() {
   return (
-    <ProjectShowcase
+    <ProjectShowcaseee
       coverImage="/p3 cover.jpg"
       title="SEA BREEZE ACADEMY: Learning by the Sea"
       mainDescription="This project establishes a contemporary educational institution in Porbandar, Gujarat, inspired by the rhythmic patterns of the Arabian Sea."
@@ -18,9 +17,9 @@ export default function ProjectShowcaseExample() {
         "Focus on sustainability, inclusivity, and creating a vibrant educational atmosphere."
       ]}
       images={[
-        "/p31.png",
         "/p32.png",
-        "/p33.png"
+        "/p33.png",
+        "/p31.png"
       ]}
     />
   )

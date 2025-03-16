@@ -8,10 +8,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
             <Link href="/" className="font-playfair text-3xl font-bold tracking-tight">
-              Mendu<span className="text-muted-foreground">Lohitha</span>
+              Lohitha<span className="text-muted-foreground">Mendu</span>
             </Link>
             <p className="mt-4 text-muted-foreground">
-            I design innovative, sustainable structures with a focus on functionality, aesthetics, and user experience.
             </p>
           </div>
 
