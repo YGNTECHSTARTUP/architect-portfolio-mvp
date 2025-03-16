@@ -58,6 +58,8 @@ export default function ProjectShowcase({
       </div>
 
       <div id="vid">
+      
+    
 
       </div>
 

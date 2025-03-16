@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import Timeline from "@/components/Timeline"
 import { VerseOnMind } from "@/components/VerseOnMind"
 import SendMessage from "@/components/SendMessage"
+import Video from "next-video"
 const projects = [
   {
     id:1,
@@ -122,7 +123,7 @@ export default function HomePage() {
         </div>
         <div className="mt-4">
         <VerseOnMind/>
-
+        {/* <Video src={"/intro.mp4"} className="aspect-square h-64 w-64"/> */}
         </div>
 
         {/* <div className="flex justify-center ">
@@ -134,15 +135,27 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="container-custom section-spacing -mt-20">
-  <div className="grid md:grid-cols-3 gap-12">
-    <div>
-      <h2 className="heading-lg mb-6 relative">
-        About
-        <span className="absolute -z-10 text-[10rem] font-bold text-muted/20 -top-20 -left-6 opacity-80">01</span>
-      </h2>
+      <section id="about" className="container-custom section-spacing mt-10 md:-mt-20">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start relative">
+  <h2 className="md:hidden heading-lg mb-6 relative">
+  About
+  </h2>
+    {/* Video Section */}
+    <div className="flex justify-center md:justify-start">
+      <div className="aspect-square w-[250px] md:w-[300px]">
+        <Video src="/intro.mp4" height={300} width={300} />
+      </div>
     </div>
+
+    {/* Text Content */}
     <div className="md:col-span-2">
+      <h2 className="hidden heading-lg mb-6 md:block md:relative">
+        About
+        <span className="absolute -z-10 text-[6rem] sm:text-[8rem] md:text-[10rem] font-bold text-muted/20 -top-12 sm:-top-16 md:-top-20 -left-4 sm:-left-6 opacity-80">
+          01
+        </span>
+      </h2>
+
       <p className="body-lg mb-6">
         I&apos;m Lohitha Mendu, an architecture student with a strong passion for sustainable design. My focus is on creating 
         environmentally responsible spaces using natural materials and minimalist principles.
@@ -155,17 +168,22 @@ export default function HomePage() {
         I am deeply passionate about environmental sustainability and believe that architecture has a critical role to play in 
         creating a more sustainable future.
       </p>
-      {/* <div className="flex flex-wrap gap-4">
+
+      {/* Optional Buttons */}
+      {/* 
+      <div className="flex flex-wrap gap-4">
         <Button asChild variant="outline" size="lg">
           <Link href="/portfolio">View My Work</Link>
         </Button>
         <Button asChild variant="outline" size="lg">
           <Link href="/workshops">Explore Workshops</Link>
         </Button>
-      </div> */}
+      </div> 
+      */}
     </div>
   </div>
 </section>
+
 
 
       <Timeline/>
