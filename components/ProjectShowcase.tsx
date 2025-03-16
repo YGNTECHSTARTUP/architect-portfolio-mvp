@@ -57,6 +57,10 @@ export default function ProjectShowcase({
         </div>
       </div>
 
+      <div id="vid">
+
+      </div>
+
       {/* Image Grid */}
       <div className="mb-16">
         <h2 className="text-2xl font-semibold text-primary mb-6">Gallery</h2>

@@ -21,6 +21,14 @@ const projects = [
     description:
       "Reimagining heritage through adaptive reuse, this project transforms a 100-year-old home in Daman into a vibrant art studio and residence. By preserving historical elements while integrating modern functionality, the design honors tradition while fostering creativity.",
   },
+  {
+    id: 3,
+    title: "SEA BREEZE ACADEMY: Learning by the Sea",
+    imgurl: "p3 cover.jpg",
+    description:
+      "This coastal educational institution in Porbandar, Gujarat, draws inspiration from the rhythm of the Arabian Sea. With wave-like architectural forms and sustainable design, it offers a vibrant and inclusive learning environment for 480 students, harmonizing nature, form, and education.",
+  
+  }
 ];
 
 
