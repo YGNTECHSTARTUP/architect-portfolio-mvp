@@ -93,7 +93,7 @@ export default function HomePage() {
             <div>
               <p className="text-muted-foreground text-lg mb-2 font-medium">Hello, I&apos;m</p>
               <h1 className="heading-xl mb-4">Lohitha Mendu</h1>
-              <h2 className="heading-md text-muted-foreground">Design Architect</h2>
+              <h2 className="heading-md text-muted-foreground">Architecture Student</h2>
             </div>
             <p className="body-lg text-muted-foreground max-w-md">
             Passionated about sustainable architecture </p>
