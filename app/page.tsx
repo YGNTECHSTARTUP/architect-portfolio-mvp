@@ -140,7 +140,7 @@ export default function HomePage() {
   About
   </h2>
     {/* Video Section */}
-    <div className="flex justify-center md:justify-start">
+    <div id="intro" className="flex justify-center md:justify-start">
       <div className="aspect-square w-[250px] md:w-[300px]">
         <Video src="/intro.mp4" height={300} width={300} />
       </div>
