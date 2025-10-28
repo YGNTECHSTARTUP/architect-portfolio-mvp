@@ -2,37 +2,93 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
-// Mock projects data
+// Mock projects data (props copied from each Project{n}/page.tsx)
 const projects = [
   {
     id: 1,
-    title: "The Essence of Design: SPACE, FORM, FUNCTION",
+    title: "The Essence of Design SPACE, FORM, FUNCTION",
     description:
-      "This project explores the dynamic relationship between space, form, and function. Through an innovative design approach, we have created an interconnected spatial experience that adapts to natural site conditions, promoting fluid movement and interaction within the built environment.",
+      "This project explores spatial organization through interconnected modular cubes, integrating built spaces with natural landscapes.",
     technologies: ["Architecture", "Modular Design", "Sustainability"],
-    image: "/p1 cover.jpg",
+    image: "/sem2cov.png",
     slug: "essence-of-design",
     type: "hosted",
+    images: [
+      "/sem1.png",
+      "/sem2.png",
+      "/sem3.png",
+      "/sem4.png",
+    ],
+    video: "sem4video",
   },
   {
     id: 2,
-    title: "BREATHING NEW LIFE: Daman's Heritage",
+    title: "BREATHING NEW LIFE Daman's Heritage",
     description:
-      "Reimagining heritage through adaptive reuse, this project transforms a 100-year-old home in Daman into a vibrant art studio and residence. By preserving historical elements while integrating modern functionality, the design honors tradition while fostering creativity.",
+      "This renovation transforms a century-old heritage building in Daman, preserving its historic charm while adapting it for modern use. By integrating adjacent plots, the space is expanded without compromising its original structure and facade.",
     technologies: ["Heritage Restoration", "Adaptive Reuse", "Community Space"],
-    image: "/p2 cover.png",
+    image: "/sem4cov.png",
     slug: "daman-heritage-renovation",
     type: "hosted",
+    images: ["/sem41.png", "/sem42.png", "/sem43.png"],
+    video: "sem4video",
   },
   {
     id: 3,
     title: "SEA BREEZE ACADEMY: Learning by the Sea",
     description:
-      "This project establishes a contemporary educational institution in Porbandar, Gujarat, inspired by the rhythmic patterns of the Arabian Sea. Fluid architectural forms, layered spatial organization, and strategic integration of natural light and ventilation create a sustainable, inclusive, and vibrant learning environment for 480 students.",
+      "This project establishes a contemporary educational institution in Porbandar, Gujarat, inspired by the rhythmic patterns of the Arabian Sea.",
     technologies: ["Sustainable Design", "Wave-Inspired Architecture", "Educational Infrastructure"],
     image: "/p3 cover.jpg",
     slug: "sea-breeze-academy",
     type: "hosted",
+    images: ["/p32.png", "/p33.png", "/p31.png"],
+    video: "/pro3.mp4",
+  },
+  {
+    id: 4,
+    title: "AQUATIC FLIGHT: FIN TO FACADE",
+    description:
+      "The design uses an undulating, illuminated metallic canopy that creates a strong sense of fluid motion. It is a landmark structure that expresses biomorphic concepts through contrasting materials and dynamic form.",
+    technologies: ["Biomorphic Design", "Facade Engineering"],
+    image: "/sem3cov.png",
+    slug: "aquatic-flight",
+    type: "hosted",
+    images: ["/sem31.png"],
+  },
+  {
+    id: 5,
+    title: "LIVING LIGHT: Shared Life",
+    description:
+      "This contemporary residential design is conceptualized as an exploration of light and texture, perfectly articulated in this facade view.",
+    technologies: ["Residential Design", "Daylighting"],
+    image: "/sem6cov.png",
+    slug: "living-light",
+    type: "hosted",
+    images: ["/sem63.png", "/sem62.png", "/sem61.png", "/sem64.png", "/sem65.png"],
+    video: "/sem6video.mp4",
+  },
+  {
+    id: 6,
+    title: "BEYOND THE WALLS: together of culture and living",
+    description:
+      "the redevolpment focuses on the comprehensive redevelopment of an existing informal settlement, housing a population of 635 individuals across 127 households (averaging 5 members per family). The core challenge was to provide safe, dignified, and culturally responsive housing while preserving the strong community bonds and supporting the residents' diverse occupational needs.",
+    technologies: ["Community Planning", "Affordable Housing"],
+    image: "/sem7cov.png",
+    slug: "beyond-the-walls",
+    type: "hosted",
+    images: ["/sem73.png", "/sem72.png", "/sem71.png", "/sem74.png", "/sem75.png"],
+  },
+  {
+    id: 7,
+    title: "The Crumpled Canopy:  Translating Ephemeral Form",
+    description:
+      "This project translates the transient gesture of crumpling paper into an enduring architectural structure. The methodology involved decoding the paper's chaotic wrinkles into a rational system of polyhedral facets and linear struts. The result is a structure defined by Tectonic Fragmentation, where the vibrant, faceted skin acts as both a visual mosaic and the structural system. Functionally, the pavilion is a Programmable Threshold, creating a dynamic, semi-open public space that actively frames the landscape and serves as a flexible venue for community gathering.",
+    technologies: ["Parametric Design", "Form-Finding"],
+    image: "/sem8cov.jpg",
+    slug: "crumpled-canopy",
+    type: "hosted",
+    images: ["/sem83.jpg", "/sem82.jpg", "/sem81.jpg", "/sem84.jpg", "/sem85.jpg"],
   },
 ];
 

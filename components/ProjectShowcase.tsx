@@ -5,8 +5,7 @@ interface ProjectShowcaseProps {
   coverImage: string
   title: string
   mainDescription: string
-  concept: string[]
-  description: string[]
+ 
   images: string[]
   className?: string
 }
@@ -15,8 +14,6 @@ export default function ProjectShowcase({
   coverImage,
   title,
   mainDescription,
-  concept,
-  description,
   images,
   className,
 }: ProjectShowcaseProps) {
@@ -34,28 +31,7 @@ export default function ProjectShowcase({
       </div>
 
       {/* Concept and Description */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
-        <div className="space-y-4">
-          <h2 className="text-2xl font-semibold text-primary">Concept</h2>
-          <div className="p-6 bg-card rounded-lg border shadow-sm">
-            <ul className="list-decimal list-inside text-card-foreground space-y-2">
-              {concept.map((point, index) => (
-                <li key={index}>{point}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="space-y-4">
-          <h2 className="text-2xl font-semibold text-primary">Description</h2>
-          <div className="p-6 bg-card rounded-lg border shadow-sm">
-            <ul className="list-decimal list-inside text-card-foreground space-y-2">
-              {description.map((point, index) => (
-                <li key={index}>{point}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
+     
 
       <div id="vid">
       
